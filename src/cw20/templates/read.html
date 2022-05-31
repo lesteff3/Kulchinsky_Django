@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %} Read lines form {% endblock %}
+
+{% block content %}
+    <form action="{% url 'blog'%}" method="post">
+        {% csrf_token %}
+    <p>Your first name is: {{ firstname }}</p>
+    <p>Your last name is: {{ lastname }}</p>
+    <p>Your age is: {{ age }}</p>
+    </form>
+    <a href="{% url 'lines' %}"><button>назад </button></a>
+{% endblock %}

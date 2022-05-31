@@ -1,0 +1,26 @@
+{% extends 'home.html' %}
+{% block title %} Add person {% endblock %}
+{% block content %}
+    <form action="{% url 'create'%}" method="post">
+        {% csrf_token %}
+    <p>
+            <label>Введите имя</label><br>
+            <input type="text" name="first_name" />
+    </p>
+    <p>
+            <label>Введите Фамилию</label><br>
+            <input type="text" name="last_name" />
+    </p>
+    <p>
+            <label>Введите ваш возраст</label><br>
+            <input type="text" name="age" />
+    </p>
+    <p>
+            <label>Введите вашу профессию</label><br>
+            <input type="text" name="profession" />
+    </p>
+    </p>
+        <input type="submit" name="submit" value="Сохранить">
+    </form>
+    <li><a href="{% url 'home' %}"> назад </a></li>
+{% endblock %}

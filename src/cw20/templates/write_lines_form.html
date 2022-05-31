@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} Write lines form {% endblock %}
+
+{% block content %}
+    <form action="{% url 'lines'%}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <input type="Submit" name="submit" value="Submit"/>
+    <input type="Submit" name="delete" value="delete"/>
+    </form>
+{% if submit_button == "Submit" %}
+<p>Your first name is: {{ firstname }}</p>
+<p>Your last name is: {{ lastname }}</p>
+<p>Your age is: {{ age }}</p>
+{% elif submit_button == "delete" %}
+
+{% endif %}
+
+<a href="{% url 'blog' %}"><button>Прочитать статью </button></a>
+{% endblock %}
